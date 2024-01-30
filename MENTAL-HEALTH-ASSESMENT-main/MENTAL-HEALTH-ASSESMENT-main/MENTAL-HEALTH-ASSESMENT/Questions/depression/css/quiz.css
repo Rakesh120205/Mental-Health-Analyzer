@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: #ffeae1;
+}
+
+.heading {
+  font-weight: 600;
+  font-family: "Fredoka One", sans-serif;
+  text-align: center;
+  text-transform: initial;
+  display: block;
+  color: orange;
+  font-size: 60px;
+  text-shadow: #f5f5f5 1px;
+  background: #ffffff;
+  padding-bottom: 15px;
+  padding-top: 2px;
+  border: 5px solid orange;
+  border-radius: 0px 0px 39px 49px;
+}
+
+.wrapper {
+  display: grid;
+  margin: 20px 90px auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    margin: 200px auto;
+  }
+}
+
+
+
+.wrapper .box {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 112px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.fa-head-side-virus:before {
+    content: "\e064";
+}
+.wrapper .box .front-face {
+  background: #fff;
+  height: 220px;
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+  border: 5px solid orange;
+}
+
+.box .front-face .icon {
+  height: 80px;
+}
+
+.box .front-face .icon i {
+  font-size: 65px;
+}
+
+.box .front-face span,
+.box .back-face span {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.box .front-face .icon i,
+.box .front-face span {
+  background: orange;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.box .back-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 30px;
+  color: black;
+  opacity: 0;
+  border: 5px solid orange;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background-image: linear-gradient(
+    to bottom,
+    white
+  );
+  transform: translateY(110px) rotateX(-90deg);
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+
+.box .back-face p {
+  text-decoration: none;
+  margin-top: 25px;
+  text-align: justify;
+}
+
+.box:hover .back-face {
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+
+.box:hover .front-face {
+  opacity: 0;
+  transform: translateY(-110px) rotateX(90deg);
+}
+
+.back-face .button {
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid orange !important;
+  padding: 11px 11px;
+  font-size: 20px;
+  /* line-height: 48px; */
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  z-index: 5;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+  background-color: orange;
+  -webkit-box-shadow: 0px 5px 16px 0px #fe9c09;
+  -moz-box-shadow: 0px 5px 16px 0px #fe9c09;
+  box-shadow: 0px 5px 16px 0px #fe9c09;
+  font-family: "Barlow", sans-serif;
+  border-radius: 6px;
+  /* text-transform: uppercase; */
+}
+
+.back-face .button:hover {
+  color: orange;
+  background-color: #fff;
+  border-color: orange;
+}
